@@ -114,14 +114,6 @@ if GEMINI_API_KEY and st.button("Gemini ทำนาย 24 ชม. ข้าง�
         except:
             st.write(response.text)
 
-# === Chat กับ Gemini ===
-st.subheader("ถาม Gemini ได้เลย!")
-user_question = st.text_input("เช่น พรุ่งนี้ฝุ่นจะเยอะไหม?, น้ำแข็งนี้ดื่มได้หรือเปล่า?")
-if user_question and GEMINI_API_KEY:
-    with st.spinner("กำลังถาม Gemini..."):
-        prompt_chat = f"คุณคือผู้เชี่ยวชาญสิ่งแวดล้อมในไทย ตอบสั้นกระชับและเป็นกันเอง: {user_question}\nข้อมูลล่าสุด: PM2.5={latest['PM2.5']}, Hardness={latest['Hardness']} mg/L, สถานที่: {location}"
-        resp = model.generate_content(prompt_chat)
-        st.write(resp.text)
 
 # === ดาวน์โหลดข้อมูล ===
 csv = df.to_csv(index=False).encode()
