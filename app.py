@@ -14,7 +14,7 @@ import os
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"] if "GEMINI_API_KEY" in st.secrets else st.text_input("ใส่ Gemini API Key", type="password")
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-pro')  # หรือ gemini-2.0-exp ถ้ามี
+    model = genai.GenerativeModel('gemini-1.5-flash')  # หรือ gemini-2.0-exp ถ้ามี
 
 st.set_page_config(page_title="Environmental & Water Quality Dashboard", layout="wide")
 st.title("Environmental & Water Quality Monitoring Dashboard")
